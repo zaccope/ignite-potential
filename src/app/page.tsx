@@ -74,19 +74,8 @@ export default function Home() {
       </section>
 
       {/* ═══════════════ DIFFERENTIATORS ═══════════════ */}
-      <section className="relative overflow-hidden py-24 md:py-32">
-        {/* Flame illustration as background element behind heading */}
-        <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 w-[500px] md:w-[700px] opacity-[0.08]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/circle-fire.png"
-            alt=""
-            className="w-full mix-blend-multiply"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-teal" />
-        </div>
-
-        <div className="relative mx-auto max-w-6xl px-6">
+      <section className="py-24 md:py-32">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="grid grid-cols-1 items-start gap-16 md:grid-cols-12">
             <div className="md:col-span-5">
               <Reveal>
@@ -99,6 +88,10 @@ export default function Home() {
                 <h2 className="mt-5 text-3xl font-bold leading-[1.1] tracking-tight text-teal-darkest md:text-4xl">
                   Where experience meets personalised progress
                 </h2>
+              </Reveal>
+              <Reveal delay={120} className="mt-10">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/circle-fire.png" alt="Innovation illustration" width={280} height={280} className="w-48 mix-blend-multiply opacity-85 md:w-56" />
               </Reveal>
             </div>
 
@@ -124,7 +117,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════ SERVICES ═══════════════ */}
+      {/* ═══════════════ SERVICES */}
       <section id="services" className="py-24 md:py-32">
         <div className="mx-auto max-w-6xl px-6">
           <Reveal>
