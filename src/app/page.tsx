@@ -90,9 +90,11 @@ export default function Home() {
                   Where experience meets personalised progress
                 </h2>
               </Reveal>
-              <RevealNoBlur delay={120} className="mt-10 mix-blend-multiply">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/why-us.png" alt="Compass with gears and leaves representing guidance and expertise" width={280} height={280} className="w-48 rounded-3xl bg-white/30 p-4 shadow-[0_8px_30px_rgba(255,255,255,0.15)] md:w-56" />
+              <RevealNoBlur delay={120} className="mt-10">
+                <div className="w-48 rounded-3xl bg-white/25 p-5 shadow-[0_8px_30px_rgba(255,255,255,0.12)] ring-1 ring-white/30 md:w-56">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/why-us.png" alt="Compass with gears and leaves representing guidance and expertise" width={280} height={280} className="w-full mix-blend-multiply" />
+                </div>
               </RevealNoBlur>
             </div>
 
