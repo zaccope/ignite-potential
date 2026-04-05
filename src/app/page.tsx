@@ -89,10 +89,11 @@ export default function Home() {
                   Where experience meets personalised progress
                 </h2>
               </Reveal>
-              <Reveal delay={120} className="mt-10">
+              {/* No Reveal wrapper — CSS filter in Reveal breaks mix-blend-multiply */}
+              <div className="mt-10">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/images/why-us.png" alt="Compass with gears and leaves representing guidance and expertise" width={280} height={280} className="w-48 mix-blend-multiply md:w-56" />
-              </Reveal>
+              </div>
             </div>
 
             <div className="md:col-span-7">
