@@ -91,7 +91,7 @@ export default function Home() {
               </Reveal>
               <Reveal delay={120} className="mt-10">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/circle-fire.png" alt="Innovation illustration" width={280} height={280} className="w-48 mix-blend-multiply opacity-85 md:w-56" />
+                <img src="/images/why-us.png" alt="Compass with gears and leaves representing guidance and expertise" width={280} height={280} className="w-48 mix-blend-multiply md:w-56" />
               </Reveal>
             </div>
 
