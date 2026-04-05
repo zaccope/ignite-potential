@@ -65,17 +65,14 @@ export default function Home() {
             </div>
 
             <Reveal delay={180} className="md:col-span-5 flex justify-center md:justify-end">
-              <div className="relative rounded-[2.5rem] bg-teal-dark/10 p-8 md:p-10 lg:p-12">
-                <div className="absolute -inset-6 rounded-full bg-white/8 blur-3xl" />
-                <Image
-                  src="/images/hero-illustration.png"
-                  alt="Person standing beside a growth tree of ideas, gears, and lightbulbs"
-                  width={420}
-                  height={420}
-                  className="relative w-48 mix-blend-multiply md:w-56 lg:w-64"
-                  priority
-                />
-              </div>
+              <Image
+                src="/images/hero-illustration.png"
+                alt="Professionals beneath a growth tree of ideas, gears, and lightbulbs"
+                width={420}
+                height={420}
+                className="w-56 drop-shadow-[0_10px_40px_rgba(0,0,0,0.08)] md:w-68 lg:w-80"
+                priority
+              />
             </Reveal>
           </div>
         </div>
@@ -172,9 +169,9 @@ export default function Home() {
               <Reveal key={service.title} delay={service.delay}>
                 <div className="group flex h-full flex-col rounded-[2rem] bg-white/50 p-1.5 ring-1 ring-white/60 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:shadow-[0_16px_50px_rgba(0,0,0,0.1)]">
                   <div className="flex h-full flex-col overflow-hidden rounded-[calc(2rem-6px)] bg-white">
-                    <div className="overflow-hidden bg-teal/10 p-6">
+                    <div className="flex items-center justify-center overflow-hidden p-8">
                       <Image src={service.img} alt={service.alt} width={400} height={400}
-                        className="mx-auto w-40 mix-blend-multiply transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.05]" />
+                        className="w-36 mix-blend-multiply transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.05] md:w-40" />
                     </div>
                     <div className="flex flex-1 flex-col justify-between p-6">
                       <div>
