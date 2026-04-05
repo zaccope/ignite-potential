@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Nav from "./components/Nav";
 import Reveal from "./components/Reveal";
+import RevealNoBlur from "./components/RevealNoBlur";
 
 export default function Home() {
   return (
@@ -89,11 +90,10 @@ export default function Home() {
                   Where experience meets personalised progress
                 </h2>
               </Reveal>
-              {/* No Reveal wrapper — CSS filter in Reveal breaks mix-blend-multiply */}
-              <div className="mt-10">
+              <RevealNoBlur delay={120} className="mt-10 mix-blend-multiply">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/why-us.png" alt="Compass with gears and leaves representing guidance and expertise" width={280} height={280} className="w-48 mix-blend-multiply md:w-56" />
-              </div>
+                <img src="/images/why-us.png" alt="Compass with gears and leaves representing guidance and expertise" width={280} height={280} className="w-48 rounded-3xl bg-white/30 p-4 shadow-[0_8px_30px_rgba(255,255,255,0.15)] md:w-56" />
+              </RevealNoBlur>
             </div>
 
             <div className="md:col-span-7">
