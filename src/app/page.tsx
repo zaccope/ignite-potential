@@ -23,7 +23,7 @@ export default function Home() {
             alt=""
             className="h-full w-full object-contain object-right mix-blend-multiply opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-teal via-teal/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-teal via-teal/70 via-40% to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-teal via-transparent to-teal/30" />
         </div>
 
