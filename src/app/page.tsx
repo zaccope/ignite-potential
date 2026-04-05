@@ -71,7 +71,7 @@ export default function Home() {
                 alt="Professionals beneath a growth tree of ideas, gears, and lightbulbs"
                 width={420}
                 height={420}
-                className="w-56 rounded-[2rem] bg-teal p-4 drop-shadow-[0_10px_40px_rgba(0,0,0,0.08)] md:w-68 lg:w-80"
+                className="w-56 mix-blend-multiply md:w-72 lg:w-80"
               />
             </Reveal>
           </div>
