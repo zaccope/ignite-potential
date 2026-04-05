@@ -65,14 +65,17 @@ export default function Home() {
             </div>
 
             <Reveal delay={180} className="md:col-span-5 flex justify-center md:justify-end">
-              <Image
-                src="/images/hero-illustration.png"
-                alt="Person standing beside a growth tree of ideas, gears, and lightbulbs"
-                width={420}
-                height={420}
-                className="w-64 mix-blend-multiply opacity-90 md:w-80 lg:w-[380px]"
-                priority
-              />
+              <div className="relative rounded-[2.5rem] bg-teal-dark/10 p-8 md:p-10 lg:p-12">
+                <div className="absolute -inset-6 rounded-full bg-white/8 blur-3xl" />
+                <Image
+                  src="/images/hero-illustration.png"
+                  alt="Person standing beside a growth tree of ideas, gears, and lightbulbs"
+                  width={420}
+                  height={420}
+                  className="relative w-48 mix-blend-multiply md:w-56 lg:w-64"
+                  priority
+                />
+              </div>
             </Reveal>
           </div>
         </div>
