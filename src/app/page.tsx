@@ -30,10 +30,9 @@ export default function Home() {
               </Reveal>
 
               <Reveal delay={80}>
-                <h1 className="mt-8 text-[clamp(2.8rem,7vw,5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-teal-darkest">
-                  Empowering growth
-                  <br />
-                  <span className="text-teal-deep">and development</span>
+                <h1 className="mt-8 text-[clamp(2.8rem,7vw,5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-teal-darkest text-balance">
+                  Empowering growth and{" "}
+                  <span className="text-teal-deep">development</span>
                 </h1>
               </Reveal>
 
@@ -69,11 +68,11 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute -inset-10 rounded-full bg-white/12 blur-3xl" />
                 <Image
-                  src="/images/blue-fire.png"
-                  alt="Growth and innovation illustration"
+                  src="/images/hero-illustration.png"
+                  alt="Person standing beside a growth tree of ideas, gears, and lightbulbs"
                   width={420}
                   height={420}
-                  className="relative w-60 drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)] md:w-72 lg:w-[340px]"
+                  className="relative w-64 drop-shadow-[0_20px_50px_rgba(0,0,0,0.1)] md:w-80 lg:w-[380px]"
                   priority
                 />
               </div>
@@ -152,7 +151,7 @@ export default function Home() {
               <div className="group h-full rounded-[2rem] bg-white/50 p-1.5 ring-1 ring-white/60 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:shadow-[0_16px_50px_rgba(0,0,0,0.1)]">
                 <div className="flex h-full flex-col overflow-hidden rounded-[calc(2rem-6px)] bg-white">
                   <div className="overflow-hidden">
-                    <Image src="/images/individual-development.jpeg" alt="Individual walking towards growth and innovation" width={629} height={629}
+                    <Image src="/images/individual-development.png" alt="One-on-one coaching session with growth symbols" width={629} height={629}
                       className="w-full transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.03]" />
                   </div>
                   <div className="flex flex-1 flex-col justify-between p-7 md:p-9">
@@ -176,7 +175,7 @@ export default function Home() {
               <div className="group h-full rounded-[2rem] bg-white/50 p-1.5 ring-1 ring-white/60 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:shadow-[0_16px_50px_rgba(0,0,0,0.1)]">
                 <div className="flex h-full flex-col overflow-hidden rounded-[calc(2rem-6px)] bg-white">
                   <div className="overflow-hidden">
-                    <Image src="/images/group-development.jpeg" alt="Team collaboration and innovation" width={629} height={629}
+                    <Image src="/images/group-development.png" alt="Diverse team collaborating with strategy elements" width={629} height={629}
                       className="w-full transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.03]" />
                   </div>
                   <div className="p-6">
@@ -194,7 +193,7 @@ export default function Home() {
               <div className="group h-full rounded-[2rem] bg-white/50 p-1.5 ring-1 ring-white/60 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:shadow-[0_16px_50px_rgba(0,0,0,0.1)]">
                 <div className="flex h-full flex-col overflow-hidden rounded-[calc(2rem-6px)] bg-white">
                   <div className="overflow-hidden">
-                    <Image src="/images/consulting.jpeg" alt="Consulting and digital innovation" width={629} height={629}
+                    <Image src="/images/consulting.png" alt="Consultant presenting strategic roadmap" width={629} height={629}
                       className="w-full transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.03]" />
                   </div>
                   <div className="p-6">
@@ -353,82 +352,57 @@ export default function Home() {
             <h2 className="mt-5 text-3xl font-bold leading-[1.1] tracking-tight text-teal-darkest md:text-4xl">Meet Our Team</h2>
           </Reveal>
 
-          <div className="mt-14 grid grid-cols-1 gap-5 lg:grid-cols-2">
-            {/* Thea */}
-            <Reveal delay={80}>
-              <div className="rounded-[2rem] bg-white/50 p-1.5 ring-1 ring-white/60">
-                <div className="overflow-hidden rounded-[calc(2rem-6px)] bg-white">
-                  <div className="flex items-start gap-5 p-7 md:p-8">
-                    <Image src="/images/thea.png" alt="Thea Roberts" width={160} height={160} className="h-28 w-28 shrink-0 rounded-2xl object-cover md:h-32 md:w-32" />
-                    <div className="min-w-0">
-                      <h3 className="text-xl font-bold text-teal-darkest">Thea Roberts</h3>
-                      <ul className="mt-2 space-y-0.5 text-[13px] leading-snug text-teal-darkest/50">
-                        <li>Executive Coach &amp; Mentor</li>
-                        <li>25 years leadership experience to MD level</li>
-                        <li>Advanced facilitator</li>
-                        <li>Diverse sector experience</li>
-                      </ul>
+          <div className="mt-14 grid grid-cols-1 gap-5 lg:grid-cols-2 lg:items-stretch">
+            {([
+              {
+                img: "/images/thea.png",
+                name: "Thea Roberts",
+                roles: ["Executive Coach & Mentor", "25 years leadership experience to MD level", "Advanced facilitator", "Diverse sector experience"],
+                expertise: ["Unlocking individual and team potential through coaching, mentoring, and workshops.", "Tailored sessions to clients' specific goals and desired outcomes.", "Fosters capabilities, connection, and clarity."],
+                experience: ["Nearly 30 years of senior leadership in retail and consumer goods.", "Managed turnovers up to \u00A3450M and teams of 120+.", "Worked with Mars, Marks & Spencer, and global clients."],
+                delay: 80,
+              },
+              {
+                img: "/images/heidi.png",
+                name: "Heidi Hunter-Cope",
+                roles: ["Chartered Psychologist", "25 years in developing people", "Large-scale organisational change", "Diverse sector experience"],
+                expertise: ["25 years of innovative leadership solutions.", "Expert in managing large-scale change projects.", "Improves leadership, communication, and management skills."],
+                experience: ["FMCG, financial services, utilities, engineering, retail, airlines and elite sport.", "Large-scale change and development initiatives.", "Extensive work throughout the UK and internationally."],
+                delay: 140,
+              },
+            ] as const).map((person) => (
+              <Reveal key={person.name} delay={person.delay}>
+                <div className="flex h-full flex-col rounded-[2rem] bg-white/50 p-1.5 ring-1 ring-white/60">
+                  <div className="flex h-full flex-col overflow-hidden rounded-[calc(2rem-6px)] bg-white">
+                    {/* Photo + intro — fixed height */}
+                    <div className="flex items-start gap-5 p-7 md:p-8">
+                      <Image src={person.img} alt={person.name} width={160} height={160} className="h-28 w-28 shrink-0 rounded-2xl object-cover md:h-32 md:w-32" />
+                      <div className="min-w-0">
+                        <h3 className="text-xl font-bold text-teal-darkest">{person.name}</h3>
+                        <ul className="mt-2 space-y-0.5 text-[13px] leading-snug text-teal-darkest/50">
+                          {person.roles.map((r) => <li key={r}>{r}</li>)}
+                        </ul>
+                      </div>
                     </div>
-                  </div>
-                  <div className="grid grid-cols-2 divide-x divide-gray-100 border-t border-gray-100">
-                    <div className="p-6">
-                      <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-darkest/30">Expertise</h4>
-                      <ul className="mt-3 space-y-2 text-[13px] leading-[1.6] text-teal-darkest/55">
-                        <li>Unlocking individual and team potential through coaching, mentoring, and workshops.</li>
-                        <li>Tailored sessions to clients&apos; specific goals and desired outcomes.</li>
-                        <li>Fosters capabilities, connection, and clarity.</li>
-                      </ul>
-                    </div>
-                    <div className="p-6">
-                      <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-darkest/30">Experience</h4>
-                      <ul className="mt-3 space-y-2 text-[13px] leading-[1.6] text-teal-darkest/55">
-                        <li>Nearly 30 years of senior leadership in retail and consumer goods.</li>
-                        <li>Managed turnovers up to &pound;450M and teams of 120+.</li>
-                        <li>Worked with Mars, Marks &amp; Spencer, and global clients.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Heidi */}
-            <Reveal delay={140}>
-              <div className="rounded-[2rem] bg-white/50 p-1.5 ring-1 ring-white/60">
-                <div className="overflow-hidden rounded-[calc(2rem-6px)] bg-white">
-                  <div className="flex items-start gap-5 p-7 md:p-8">
-                    <Image src="/images/heidi.png" alt="Heidi Hunter-Cope" width={160} height={160} className="h-28 w-28 shrink-0 rounded-2xl object-cover md:h-32 md:w-32" />
-                    <div className="min-w-0">
-                      <h3 className="text-xl font-bold text-teal-darkest">Heidi Hunter-Cope</h3>
-                      <ul className="mt-2 space-y-0.5 text-[13px] leading-snug text-teal-darkest/50">
-                        <li>Chartered Psychologist</li>
-                        <li>25 years in developing people</li>
-                        <li>Large-scale organisational change</li>
-                        <li>Diverse sector experience</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 divide-x divide-gray-100 border-t border-gray-100">
-                    <div className="p-6">
-                      <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-darkest/30">Expertise</h4>
-                      <ul className="mt-3 space-y-2 text-[13px] leading-[1.6] text-teal-darkest/55">
-                        <li>25 years of innovative leadership solutions.</li>
-                        <li>Expert in managing large-scale change projects.</li>
-                        <li>Improves leadership, communication, and management skills.</li>
-                      </ul>
-                    </div>
-                    <div className="p-6">
-                      <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-darkest/30">Experience</h4>
-                      <ul className="mt-3 space-y-2 text-[13px] leading-[1.6] text-teal-darkest/55">
-                        <li>FMCG, financial services, utilities, engineering, retail, airlines and elite sport.</li>
-                        <li>Large-scale change and development initiatives.</li>
-                        <li>Extensive work throughout the UK and internationally.</li>
-                      </ul>
+                    {/* Expertise / Experience — grows to fill */}
+                    <div className="grid flex-1 grid-cols-2 divide-x divide-gray-100 border-t border-gray-100">
+                      <div className="p-6">
+                        <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-darkest/30">Expertise</h4>
+                        <ul className="mt-3 space-y-2 text-[13px] leading-[1.6] text-teal-darkest/55">
+                          {person.expertise.map((e) => <li key={e}>{e}</li>)}
+                        </ul>
+                      </div>
+                      <div className="p-6">
+                        <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-darkest/30">Experience</h4>
+                        <ul className="mt-3 space-y-2 text-[13px] leading-[1.6] text-teal-darkest/55">
+                          {person.experience.map((e) => <li key={e}>{e}</li>)}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </Reveal>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -468,11 +442,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="py-8">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 text-xs text-teal-darkest/30 md:flex-row">
-          <Image src="/images/logo.png" alt="Ignite Potential" width={100} height={37} className="h-6 w-auto opacity-40" />
-          <span>&copy; {new Date().getFullYear()} Ignite Potential Ltd. All rights reserved.</span>
+      {/* ═══════════════ FOOTER ═══════════════ */}
+      <footer className="mt-8 rounded-t-[2.5rem] bg-teal-darkest">
+        <div className="mx-auto max-w-6xl px-6 pt-14 pb-8">
+          {/* Top row */}
+          <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+            <Image src="/images/logo.png" alt="Ignite Potential" width={140} height={52} className="h-8 w-auto brightness-0 invert opacity-70" />
+            <div className="flex flex-wrap gap-6">
+              {[
+                { label: "Services", href: "#services" },
+                { label: "Case Studies", href: "#case-studies" },
+                { label: "Our Team", href: "#team" },
+              ].map((l) => (
+                <a key={l.href} href={l.href} className="text-sm text-white/35 transition-colors duration-200 hover:text-white/70">{l.label}</a>
+              ))}
+            </div>
+          </div>
+
+          {/* Contact row */}
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-8">
+            <a href="mailto:heidi@ignitepotential.ltd" className="text-sm text-white/40 transition-colors hover:text-white/70">heidi@ignitepotential.ltd</a>
+            <a href="mailto:thea@ignitepotential.ltd" className="text-sm text-white/40 transition-colors hover:text-white/70">thea@ignitepotential.ltd</a>
+          </div>
+
+          {/* Divider */}
+          <div className="mt-10 border-t border-white/[0.06]" />
+
+          {/* Bottom row */}
+          <div className="mt-6 flex flex-col items-center justify-between gap-3 text-xs text-white/25 md:flex-row">
+            <span>&copy; {new Date().getFullYear()} Ignite Potential Ltd. All rights reserved.</span>
+            <div className="flex gap-6">
+              <span>Privacy Policy</span>
+              <span>Terms of Service</span>
+            </div>
+          </div>
         </div>
       </footer>
     </>
