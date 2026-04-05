@@ -1,15 +1,12 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-teal-bg: #73D2DE;
-  --color-teal-light: #8EDCE6;
+  --color-teal: #73D2DE;
   --color-teal-dark: #218380;
-  --color-teal-deep: #1a6b68;
-  --color-teal-darkest: #0f4a48;
+  --color-teal-deep: #195f5d;
+  --color-teal-darkest: #0f3d3b;
   --color-purple: #5E32FC;
   --color-purple-hover: #4a1fe0;
-  --color-card: #ffffff;
-  --color-card-muted: #f8fafa;
   --font-sans: var(--font-poppins);
 }
 
@@ -18,27 +15,34 @@ html {
 }
 
 body {
-  background: var(--color-teal-bg);
+  background: var(--color-teal);
   color: #0a0a0a;
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
   background: #5E32FC30;
-  color: #0a0a0a;
 }
 
+/* Scroll reveal */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(24px);
   transition:
-    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-on-scroll.revealed {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Ensure content visible if JS fails */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
 }
