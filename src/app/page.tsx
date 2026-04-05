@@ -65,17 +65,14 @@ export default function Home() {
             </div>
 
             <Reveal delay={180} className="md:col-span-5 flex justify-center md:justify-end">
-              <div className="relative">
-                <div className="absolute -inset-10 rounded-full bg-white/12 blur-3xl" />
-                <Image
-                  src="/images/hero-illustration.png"
-                  alt="Person standing beside a growth tree of ideas, gears, and lightbulbs"
-                  width={420}
-                  height={420}
-                  className="relative w-64 drop-shadow-[0_20px_50px_rgba(0,0,0,0.1)] md:w-80 lg:w-[380px]"
-                  priority
-                />
-              </div>
+              <Image
+                src="/images/hero-illustration.png"
+                alt="Person standing beside a growth tree of ideas, gears, and lightbulbs"
+                width={420}
+                height={420}
+                className="w-64 mix-blend-multiply opacity-90 md:w-80 lg:w-[380px]"
+                priority
+              />
             </Reveal>
           </div>
         </div>
@@ -102,7 +99,7 @@ export default function Home() {
                 </h2>
               </Reveal>
               <Reveal delay={120} className="mt-10 flex justify-start">
-                <Image src="/images/circle-fire.png" alt="Innovation illustration" width={280} height={280} className="w-48 drop-shadow-lg md:w-56" />
+                <Image src="/images/circle-fire.png" alt="Innovation illustration" width={280} height={280} className="w-48 mix-blend-multiply opacity-85 md:w-56" />
               </Reveal>
             </div>
 
@@ -145,66 +142,51 @@ export default function Home() {
             <h2 className="mt-5 text-3xl font-bold leading-[1.1] tracking-tight text-teal-darkest md:text-4xl">Our Services</h2>
           </Reveal>
 
-          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-12">
-            {/* Individual — large featured, 8 cols, 2 rows */}
-            <Reveal className="md:col-span-8 md:row-span-2" delay={80}>
-              <div className="group h-full rounded-[2rem] bg-white/50 p-1.5 ring-1 ring-white/60 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:shadow-[0_16px_50px_rgba(0,0,0,0.1)]">
-                <div className="flex h-full flex-col overflow-hidden rounded-[calc(2rem-6px)] bg-white">
-                  <div className="overflow-hidden">
-                    <Image src="/images/individual-development.png" alt="One-on-one coaching session with growth symbols" width={629} height={629}
-                      className="w-full transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.03]" />
-                  </div>
-                  <div className="flex flex-1 flex-col justify-between p-7 md:p-9">
-                    <div>
-                      <h3 className="text-2xl font-bold text-teal-darkest md:text-3xl">Individual Development</h3>
-                      <p className="mt-3 max-w-[52ch] text-[15px] leading-[1.7] text-teal-darkest/55">
-                        We offer personalised coaching to unlock your full potential. Our expert guidance helps you overcome challenges, set meaningful goals, and thrive in all aspects of life.
-                      </p>
+          <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {([
+              {
+                img: "/images/individual-development.png",
+                alt: "One-on-one coaching session with growth symbols",
+                title: "Individual Development",
+                text: "We offer personalised coaching to unlock your full potential. Our expert guidance helps you overcome challenges, set meaningful goals, and thrive in all aspects of life.",
+                delay: 80,
+              },
+              {
+                img: "/images/group-development.png",
+                alt: "Diverse team collaborating with strategy elements",
+                title: "Group Development",
+                text: "Build team cohesion and success through interactive workshops and targeted coaching. Our expert facilitators drive collaboration, communication, and results.",
+                delay: 140,
+              },
+              {
+                img: "/images/consulting.png",
+                alt: "Consultant presenting strategic roadmap",
+                title: "Personal Consulting",
+                text: "Expert consultancy services to drive growth and development. Our team brings experience and diverse perspectives to address your unique challenges and opportunities.",
+                delay: 200,
+              },
+            ] as const).map((service) => (
+              <Reveal key={service.title} delay={service.delay}>
+                <div className="group flex h-full flex-col rounded-[2rem] bg-white/50 p-1.5 ring-1 ring-white/60 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:shadow-[0_16px_50px_rgba(0,0,0,0.1)]">
+                  <div className="flex h-full flex-col overflow-hidden rounded-[calc(2rem-6px)] bg-white">
+                    <div className="overflow-hidden bg-teal/10 p-6">
+                      <Image src={service.img} alt={service.alt} width={400} height={400}
+                        className="mx-auto w-40 mix-blend-multiply transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.05]" />
                     </div>
-                    <a href="#contact" className="group/link mt-6 inline-flex items-center gap-2 text-sm font-semibold text-purple transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] hover:gap-3">
-                      Start a conversation
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5"/></svg>
-                    </a>
+                    <div className="flex flex-1 flex-col justify-between p-6">
+                      <div>
+                        <h3 className="text-lg font-bold text-teal-darkest">{service.title}</h3>
+                        <p className="mt-2 text-sm leading-[1.7] text-teal-darkest/55">{service.text}</p>
+                      </div>
+                      <a href="#contact" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-purple transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] hover:gap-3">
+                        Start a conversation
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5"/></svg>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Reveal>
-
-            {/* Group — 4 cols, top */}
-            <Reveal className="md:col-span-4" delay={140}>
-              <div className="group h-full rounded-[2rem] bg-white/50 p-1.5 ring-1 ring-white/60 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:shadow-[0_16px_50px_rgba(0,0,0,0.1)]">
-                <div className="flex h-full flex-col overflow-hidden rounded-[calc(2rem-6px)] bg-white">
-                  <div className="overflow-hidden">
-                    <Image src="/images/group-development.png" alt="Diverse team collaborating with strategy elements" width={629} height={629}
-                      className="w-full transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.03]" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-teal-darkest">Group Development</h3>
-                    <p className="mt-2 text-sm leading-[1.7] text-teal-darkest/55">
-                      Build team cohesion through interactive workshops and targeted coaching. Our facilitators drive collaboration, communication, and results.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Consulting — 4 cols, bottom */}
-            <Reveal className="md:col-span-4" delay={200}>
-              <div className="group h-full rounded-[2rem] bg-white/50 p-1.5 ring-1 ring-white/60 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:shadow-[0_16px_50px_rgba(0,0,0,0.1)]">
-                <div className="flex h-full flex-col overflow-hidden rounded-[calc(2rem-6px)] bg-white">
-                  <div className="overflow-hidden">
-                    <Image src="/images/consulting.png" alt="Consultant presenting strategic roadmap" width={629} height={629}
-                      className="w-full transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.03]" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-teal-darkest">Personal Consulting</h3>
-                    <p className="mt-2 text-sm leading-[1.7] text-teal-darkest/55">
-                      Expert consultancy to drive growth. Our team brings experience and diverse perspectives to your unique challenges.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -226,112 +208,78 @@ export default function Home() {
             <h2 className="mt-5 text-3xl font-bold leading-[1.1] tracking-tight text-teal-darkest md:text-4xl">Case Studies</h2>
           </Reveal>
 
-          {/* Case Study 1 */}
-          <Reveal delay={100}>
-            <article className="mt-14 rounded-[2rem] bg-white/50 p-1.5 ring-1 ring-white/60">
-              <div className="overflow-hidden rounded-[calc(2rem-6px)] bg-white">
-                {/* Header band */}
-                <div className="flex items-center justify-between border-b border-gray-100 px-8 py-5 md:px-10">
-                  <div>
-                    <span className="text-[11px] font-bold uppercase tracking-widest text-purple">Women in Leadership</span>
-                    <h3 className="mt-1 text-xl font-bold text-teal-darkest md:text-2xl">Multi-national FMCG manufacturer</h3>
-                  </div>
-                  <Image src="/images/rocket.png" alt="" width={64} height={64} className="hidden w-14 sm:block" />
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-5">
-                  {/* Left — 3 cols */}
-                  <div className="space-y-6 border-b border-gray-100 p-8 md:p-10 lg:col-span-3 lg:border-b-0 lg:border-r">
-                    <div>
-                      <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-darkest/30">Client</h4>
-                      <p className="mt-2 text-sm leading-[1.7] text-teal-darkest/60">Our client is a multi-national FMCG who are a leading manufacturer of food and pet care products.</p>
-                    </div>
-                    <div>
-                      <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-darkest/30">Client need</h4>
-                      <p className="mt-2 text-sm leading-[1.7] text-teal-darkest/60">Our goal was to develop a program to enhance the confidence and skills of high-potential women, aiming for promotion within 12 months and addressing gender balance in leadership.</p>
-                    </div>
-                    <div>
-                      <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-darkest/30">What we did</h4>
-                      <p className="mt-2 text-sm leading-[1.7] text-teal-darkest/60">After understanding the client&apos;s needs, we designed a program enabling women to:</p>
-                      <ul className="mt-2 space-y-1.5 text-sm text-teal-darkest/60">
-                        {["Recognise strengths and personal values.", "Develop confidence and resilience.", "Create a clear leadership brand.", "Build a career plan to focus future development and direction."].map((t) => (
-                          <li key={t} className="flex items-start gap-2"><span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-purple/50"/>{t}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Right — 2 cols */}
-                  <div className="flex flex-col gap-4 p-8 md:p-10 lg:col-span-2">
-                    <div className="flex-1 rounded-2xl bg-teal/20 p-6">
-                      <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-dark">Testimonial</h4>
-                      <p className="mt-3 text-[15px] italic leading-[1.7] text-teal-darkest/65">
-                        &ldquo;Thea and Heidi bring diverse experiences and are personable and approachable. They have been flexible, easy to work with, and agile in delivering workshops for our Women in Leadership cohorts on building confidence and leadership brand.&rdquo;
-                      </p>
-                    </div>
-                    <div className="rounded-2xl bg-purple/[0.06] p-6">
-                      <h4 className="text-[11px] font-bold uppercase tracking-widest text-purple">The result</h4>
-                      <p className="mt-3 text-sm leading-[1.7] text-teal-darkest/65">
-                        Women attending the programme reported a fundamental shift in mindset and leadership approach, feeling empowered to lead authentically. Additionally, many have achieved promotions.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </Reveal>
-
-          {/* Case Study 2 */}
-          <Reveal delay={80}>
-            <article className="mt-5 rounded-[2rem] bg-white/50 p-1.5 ring-1 ring-white/60">
-              <div className="overflow-hidden rounded-[calc(2rem-6px)] bg-white">
-                <div className="flex items-center justify-between border-b border-gray-100 px-8 py-5 md:px-10">
-                  <div>
-                    <span className="text-[11px] font-bold uppercase tracking-widest text-purple">Leadership Programme</span>
-                    <h3 className="mt-1 text-xl font-bold text-teal-darkest md:text-2xl">National network organisation</h3>
-                  </div>
-                  <Image src="/images/ignite-world.png" alt="" width={64} height={64} className="hidden w-14 sm:block" />
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-5">
-                  <div className="space-y-6 border-b border-gray-100 p-8 md:p-10 lg:col-span-3 lg:border-b-0 lg:border-r">
-                    <div>
-                      <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-darkest/30">Client</h4>
-                      <p className="mt-2 text-sm leading-[1.7] text-teal-darkest/60">Our client is a part of a national network who connect and create value for commercial organisations by investing in development and sharing best practice to maximise employment and growth.</p>
-                    </div>
-                    <div>
-                      <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-darkest/30">Client need</h4>
-                      <p className="mt-2 text-sm leading-[1.7] text-teal-darkest/60">Our brief was to design a leadership program for SME leaders, aimed at enhancing leadership skills to drive better ways of working and improved business performance.</p>
-                    </div>
-                    <div>
-                      <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-darkest/30">What we did</h4>
-                      <p className="mt-2 text-sm leading-[1.7] text-teal-darkest/60">After assessing SME leaders&apos; needs, we created a program to:</p>
-                      <ul className="mt-2 space-y-1.5 text-sm text-teal-darkest/60">
-                        {["Build emotionally intelligent relationships.", "Manage teams and individuals effectively.", "Create effective vision and strategy.", "Lead an organisation through effective change."].map((t) => (
-                          <li key={t} className="flex items-start gap-2"><span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-purple/50"/>{t}</li>
-                        ))}
-                      </ul>
-                    </div>
+          {([
+            {
+              tag: "Women in Leadership",
+              title: "Multi-national FMCG manufacturer",
+              img: "/images/rocket.png",
+              client: "Our client is a multi-national FMCG who are a leading manufacturer of food and pet care products.",
+              need: "Our goal was to develop a program to enhance the confidence and skills of high-potential women, aiming for promotion within 12 months and addressing gender balance in leadership.",
+              intro: "After understanding the client\u2019s needs, we designed a program enabling women to:",
+              items: ["Recognise strengths and personal values.", "Develop confidence and resilience.", "Create a clear leadership brand.", "Build a career plan to focus future development and direction."],
+              quote: "\u201CThea and Heidi bring diverse experiences and are personable and approachable. They have been flexible, easy to work with, and agile in delivering workshops for our Women in Leadership cohorts on building confidence and leadership brand.\u201D",
+              result: "Women attending the programme reported a fundamental shift in mindset and leadership approach, feeling empowered to lead authentically. Additionally, many have achieved promotions.",
+              delay: 100,
+            },
+            {
+              tag: "Leadership Programme",
+              title: "National network organisation",
+              img: "/images/ignite-world.png",
+              client: "Our client is a part of a national network who connect and create value for commercial organisations by investing in development and sharing best practice to maximise employment and growth.",
+              need: "Our brief was to design a leadership program for SME leaders, aimed at enhancing leadership skills to drive better ways of working and improved business performance.",
+              intro: "After assessing SME leaders\u2019 needs, we created a program to:",
+              items: ["Build emotionally intelligent relationships.", "Manage teams and individuals effectively.", "Create effective vision and strategy.", "Lead an organisation through effective change."],
+              quote: "\u201CI really enjoyed the course! I have learnt a lot and I am implementing this in my work as well as to improve myself as a person. I look forward to continuing to put the skills I have learnt into practice.\u201D",
+              result: "This ongoing project has received positive feedback. Participants report enhanced leadership, the ability to improve organisational processes. In addition several have been promoted to Director-level positions.",
+              delay: 80,
+            },
+          ] as const).map((cs, idx) => (
+            <Reveal key={cs.title} delay={cs.delay}>
+              <article className={`${idx === 0 ? "mt-14" : "mt-5"} rounded-[2rem] bg-white/50 p-1.5 ring-1 ring-white/60`}>
+                <div className="overflow-hidden rounded-[calc(2rem-6px)] bg-white">
+                  {/* Header band with blended illustration */}
+                  <div className="relative overflow-hidden bg-gradient-to-r from-teal-dark to-teal-deep px-8 py-8 md:px-10 md:py-10">
+                    <Image src={cs.img} alt="" width={200} height={200} className="pointer-events-none absolute -right-4 top-1/2 -translate-y-1/2 w-36 opacity-15 mix-blend-soft-light md:w-48 lg:w-56" />
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-white/50">{cs.tag}</span>
+                    <h3 className="mt-2 text-xl font-bold text-white md:text-2xl">{cs.title}</h3>
                   </div>
 
-                  <div className="flex flex-col gap-4 p-8 md:p-10 lg:col-span-2">
-                    <div className="flex-1 rounded-2xl bg-teal/20 p-6">
-                      <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-dark">Testimonial</h4>
-                      <p className="mt-3 text-[15px] italic leading-[1.7] text-teal-darkest/65">
-                        &ldquo;I really enjoyed the course! I have learnt a lot and I am implementing this in my work as well as to improve myself as a person. I look forward to continuing to put the skills I have learnt into practice.&rdquo;
-                      </p>
+                  <div className="grid grid-cols-1 lg:grid-cols-5">
+                    <div className="space-y-6 border-b border-gray-100 p-8 md:p-10 lg:col-span-3 lg:border-b-0 lg:border-r">
+                      <div>
+                        <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-darkest/30">Client</h4>
+                        <p className="mt-2 text-sm leading-[1.7] text-teal-darkest/60">{cs.client}</p>
+                      </div>
+                      <div>
+                        <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-darkest/30">Client need</h4>
+                        <p className="mt-2 text-sm leading-[1.7] text-teal-darkest/60">{cs.need}</p>
+                      </div>
+                      <div>
+                        <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-darkest/30">What we did</h4>
+                        <p className="mt-2 text-sm leading-[1.7] text-teal-darkest/60">{cs.intro}</p>
+                        <ul className="mt-2 space-y-1.5 text-sm text-teal-darkest/60">
+                          {cs.items.map((t) => (
+                            <li key={t} className="flex items-start gap-2"><span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-purple/50"/>{t}</li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                    <div className="rounded-2xl bg-purple/[0.06] p-6">
-                      <h4 className="text-[11px] font-bold uppercase tracking-widest text-purple">The result</h4>
-                      <p className="mt-3 text-sm leading-[1.7] text-teal-darkest/65">
-                        This ongoing project has received positive feedback. Participants report enhanced leadership, the ability to improve organisational processes. In addition several have been promoted to Director-level positions.
-                      </p>
+
+                    <div className="flex flex-col gap-4 p-8 md:p-10 lg:col-span-2">
+                      <div className="flex-1 rounded-2xl bg-teal/20 p-6">
+                        <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-dark">Testimonial</h4>
+                        <p className="mt-3 text-[15px] italic leading-[1.7] text-teal-darkest/65">{cs.quote}</p>
+                      </div>
+                      <div className="rounded-2xl bg-purple/[0.06] p-6">
+                        <h4 className="text-[11px] font-bold uppercase tracking-widest text-purple">The result</h4>
+                        <p className="mt-3 text-sm leading-[1.7] text-teal-darkest/65">{cs.result}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </article>
-          </Reveal>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </section>
 
